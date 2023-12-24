@@ -44,19 +44,67 @@ class numberPlay {
     std::cout << std::endl;
   }
   
-  int playWithBits(int& number, int& bit) {
+  int getBit(int& number, int& bit) {
+    /*
+    number = 13 = 1 1 0 1
+    bit  1 * 2^3 = 8
+    1 1 1 1
+    1 0 0 0
+    */
+   int mask = (1 << (bit-1));
+   std::cout << bit <<" " << mask << std::endl;
+   return (number & mask);
+  }
+
+  void setBitValue (int& number, int& bit) {
     /*
     number = 16 = 1 1 1 1
     bit  1 * 2^3 = 8
-
-    1 1 1 1
+    1 1 0 1
     1 0 0 0
-
     */
-    int mask = (1 << (bit-1));
-    std::cout << bit <<" " << mask << std::endl;
-    std::cout << mask << std::endl; 
-    return (number & mask);
+    int returnValue = (number |(1 << (bit-1)));
+    std::cout << __func__ << " \t" <<returnValue << std::endl;
+  }
+  
+  void clearBitValue (int& number, int& bit) {
+    /*
+    number = 16 = 1 1 1 1
+    bit  1 * 2^3 = 8
+    1 1 0 1
+    1 0 0 0
+    */
+    int returnValue = (number & (not(1 << (bit-1))));
+    std::cout << __func__ << " \t" <<returnValue << std::endl;
+  }
+  
+  void toggleBitValue (int& number, int& bit) {
+    /*
+    number = 16 = 1 1 1 1
+    bit  1 * 2^3 = 8
+    1 1 0 1
+    1 0 0 0
+    */
+    int returnValue = (number ^ (1 << (bit-1)));
+    std::cout << __func__ << " \t" <<returnValue << std::endl;
+  }
+
+  bool checkSetBit(int& number, int& bit) {
+    /*
+    number = 16 = 1 1 1 1
+    bit  1 * 2^3 = 8
+    1 1 0 1
+    1 0 0 0
+    */
+   bool bitSet {false}; 
+   int mask = (1 << (bit-1));
+   std::cout << bit <<" " << mask << " " << (number | mask) << std::endl;
+   if (number & mask) {
+    std::cout << "IF \n";
+    bitSet = true;
+    return bitSet;
+   }
+   return false;
   }
 };
 
@@ -72,9 +120,14 @@ int main()
     std::string someString = "hello world";
     numPlayObj.stringToChar(someString);
 
-    int number = 15;
+    int number = 13;
     int bitValue = 4;
-    int answer = numPlayObj.playWithBits(number, bitValue);
+    int answer = numPlayObj.getBit(number, bitValue);
     std::cout << answer << std::endl;
+    numPlayObj.setBitValue(number, bitValue);
+    numPlayObj.clearBitValue(number, bitValue);
+    numPlayObj.toggleBitValue(number, bitValue);
+    bool checkerBit = numPlayObj.checkSetBit(number, bitValue);
+    std::cout << checkerBit << std::endl;
     return 0;
 }
