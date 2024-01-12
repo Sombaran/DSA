@@ -1,12 +1,9 @@
-max_sub_array: max_sub_array.cpp
-	g++ max_sub_array.cpp -o maxSubFixedWindow -std=gnu++14
+
+all:
+	g++ main.cpp subArray.cpp -std=gnu++14 -o maxSubFixedWindow
 
 run: maxSubFixedWindow
 	./maxSubFixedWindow
 
 clean:
-	rm -f maxSubFixedWindow
-
-maxSubFixedWindow:
-	echo "Hello, World"
-
+	rm -rf maxSubFixedWindow
