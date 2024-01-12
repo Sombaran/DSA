@@ -1,3 +1,8 @@
+/*
+@Brief: Find the maximum sum subarray of a fixed size k
+https://medium.com/@coffee_addiction/window-sliding-technique-find-the-maximum-sum-subarray-of-a-fixed-size-k-4d153b640562
+*/
+
 #include <iostream>
 #include <vector>
 
