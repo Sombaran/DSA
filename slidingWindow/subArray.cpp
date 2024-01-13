@@ -4,19 +4,19 @@ https://medium.com/@coffee_addiction/window-sliding-technique-find-the-maximum-s
 */
 #include "subArray.hpp"
 
-int slidingWindow::max_sum_subarray(std::vector<int>& received, int& k) {
+int slidingWindow::max_sum_subarray(std::vector<int>& received, int& windowSize) {
     std::cout << __func__ << std::endl;
-    if (k > received.size() or k < 0 or k == 0) {
+    if (windowSize > received.size() or windowSize < 0 or windowSize == 0) {
         std::cerr << "Window size needs to be checked \n";
     }
-    int left, right = 0;
-    int currentSum = 0;
+    int left, right {};
+    int currentSum {};
     int maxSum = INT_MIN;
 
     while(right < received.size()) {
         currentSum += received[right];
 
-        if ((right-left+1) == k) {
+        if ((right-left+1) == windowSize) {
             maxSum = std::max(maxSum, currentSum);
             currentSum -= received[left];
             left++;
@@ -26,7 +26,30 @@ int slidingWindow::max_sum_subarray(std::vector<int>& received, int& k) {
     return maxSum;
 }
 
-int slidingWindow::longest_sum_subarray(std::vector<int>& received, int& k) {
+int slidingWindow::longest_sum_subarray(std::vector<int>& A, int& K) {
+    int left{},right{},sum {} ;
+	int maxLen = INT_MIN;
+    std::cout << __func__ << std::endl;
 
-    return ;
+    while (right < A.size()) {
+		sum += A[right];
+		if (sum == K) { 
+		    maxLen = std::max(maxLen, right-left+1);
+			right++;
+		}
+		else if (sum < K) {
+			right++;
+		}
+		else if (sum > K) {
+			while (sum > K) {
+				sum -= A[left];
+				left++;
+                }
+            if(sum == K){
+			    maxLen = std::max(maxLen, right-left+1);
+			}
+        right++;
+        }
+	}
+	return maxLen;
 }
