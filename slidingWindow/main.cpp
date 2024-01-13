@@ -3,7 +3,6 @@
 
 int main(){
     std::shared_ptr<slidingWindow> fObj = std::make_shared<slidingWindow> ();
-    //std::vector <std::shared_ptr<int>> vecOBj = std::make_shared<std::vector<int>> ();
     std::vector<int>vecObj1{1, 4, 2, 10, 2, 3, 1, 0, 20};
     std::vector<int>vecObj2 {10, 5, 2, 7, 1, 9 };
     int k;
