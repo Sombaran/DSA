@@ -9,6 +9,11 @@ std::string bitsManupulation::checkNumberEvenOdd(const int& number) {
     }
 }
 
-/*int bitsManupulation::getUniqueElement(const std::vector<int>& received) {
+int bitsManupulation::getUniqueElement(const std::vector<int>& received) {
+    int answer{};
 
-}*/
+    for (const auto& i: received) {
+        answer ^= i;
+    }
+    return (answer);
+}
