@@ -12,6 +12,11 @@ class bitsManupulation {
     bitsManupulation& operator= (const bitsManupulation&) = delete;
     bitsManupulation& operator= (const bitsManupulation&&) = delete;
     ~bitsManupulation() = default;
-    std::string checkNumberEvenOdd(const int& );
     int getUniqueElement(const std::vector<int>& );
     };
+
+class bitsManupulationExtendedNumbers: public bitsManupulation {
+    public:
+    std::string checkNumberEvenOdd(const int& );
+    int reverseNumber (const int& );
+};
