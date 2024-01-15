@@ -28,6 +28,15 @@ int main(){
     {
         int result1 = bExtendedBitsObj->countDigitsBits(6);
         std::cout << "Total number of digits using right shift = " << result1 << std::endl;
+        int result2 = bExtendedBitsObj->getBit(13,4);
+        std::cout << "Get the bit " << result2 << std::endl;
+        bExtendedBitsObj->setBitValue(13,4);
+        bExtendedBitsObj->clearBitValue(13,4);
+    }
+    std::shared_ptr<bitsManupulationExtendedStrings> bExtendedStringObj;
+    bExtendedStringObj = std::make_shared<bitsManupulationExtendedStrings> ();
+    {
+
     }
     return (0);
 }

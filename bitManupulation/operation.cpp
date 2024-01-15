@@ -57,15 +57,23 @@ int bitsManupulationExtendedBits::countDigitsBits(const int& number) {
     return (counter);
 }
 int bitsManupulationExtendedBits::getBit(const int& number, const int& bit) {
-
+    int tempNum {number}, bitData {bit};
+    int mask = (1 << (bitData-1));
+    std::cout << bit <<" " << mask << std::endl;
+    return (tempNum & mask);
 }
 
 void bitsManupulationExtendedBits::setBitValue(const int& number, const int& bit) {
-
+    int tempNum {number}, bitData {bit};
+    int mask = (1 << (bitData-1));
+    std::cout << bit <<" " << mask << std::endl;
+    std::cout << "Set the bit " <<(tempNum | mask) << std::endl;
+    return;
 }
 
 void bitsManupulationExtendedBits::clearBitValue(const int& number, const int& bit) {
-
+    int returnValue = (number & (not(1 << (bit-1))));
+    std::cout << __func__ << " \t" <<returnValue << std::endl;
 }
 
 void bitsManupulationExtendedBits::toggleBitValue(const int& number, const int& bit) {

@@ -34,3 +34,7 @@ class bitsManupulationExtendedBits: public bitsManupulation {
     void toggleBitValue (const int& , const int& );
     bool checkSetBit(const int& , const int& );
 };
+
+class bitsManupulationExtendedStrings: public bitsManupulation {
+    public:
+};
