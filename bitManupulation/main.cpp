@@ -9,16 +9,25 @@ int main(){
         int result1 = bObj->getUniqueElement(vObj);
         std::cout << result1 << std::endl;
     }
-    std::shared_ptr<bitsManupulationExtendedNumbers> bExtendedObj; 
-    bExtendedObj = std::make_shared<bitsManupulationExtendedNumbers>();
+    std::shared_ptr<bitsManupulationExtendedNumbers> bExtendedNumberObj; 
+    bExtendedNumberObj = std::make_shared<bitsManupulationExtendedNumbers>();
     {
-        std::string result1 = bExtendedObj->checkNumberEvenOdd(22);
-        std::cout << result1 << std::endl;
-        int result2 = bExtendedObj->reverseNumber(2345);
-        std::cout << result2 << std::endl;
-        int result3 = bExtendedObj->reverseNumber(-2345);
-        std::cout << result3 << std::endl;
+        std::string result1 = bExtendedNumberObj->checkNumberEvenOdd(22);
+        std::cout << "Number is = "<< result1 << std::endl;
+        int result2 = bExtendedNumberObj->reverseNumber(2345);
+        std::cout << "reverseNumber = "<<result2 << std::endl;
+        int result3 = bExtendedNumberObj->reverseNumber(-2345);
+        std::cout << "reverseNumber = "<< result3 << std::endl;
+        int result4 = bExtendedNumberObj->addDigits(23101);
+        std::cout << "Sum of digits = " <<result4 << std::endl;
+        int result5 = bExtendedNumberObj->countDigitsLog(6);
+        std::cout << "Total number of digits using logirthm = " << result5 << std::endl;
     }
-
+    std::shared_ptr<bitsManupulationExtendedBits> bExtendedBitsObj;
+    bExtendedBitsObj = std::make_shared<bitsManupulationExtendedBits> ();
+    {
+        int result1 = bExtendedBitsObj->countDigitsBits(6);
+        std::cout << "Total number of digits using right shift = " << result1 << std::endl;
+    }
     return (0);
 }

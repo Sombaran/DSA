@@ -19,7 +19,6 @@ std::string bitsManupulationExtendedNumbers::checkNumberEvenOdd(const int& numbe
 }
 
 int bitsManupulationExtendedNumbers::reverseNumber(const int& number) {
-    std::cout << __LINE__ << std::endl;
     int reverse {}, temp {number};
     std::cout << number << " " << temp << std::endl;
     while(temp != 0) {
@@ -27,4 +26,52 @@ int bitsManupulationExtendedNumbers::reverseNumber(const int& number) {
         temp /= 10;
     }
     return (reverse);
+}
+
+int bitsManupulationExtendedNumbers::addDigits(const int& number){
+    int tempNumber {number}, sum {};
+    while(tempNumber > 0 || sum > 9) {
+          if(tempNumber == 0) {
+              tempNumber = sum;
+              sum = 0;
+          }
+          sum += tempNumber % 10;
+          tempNumber /= 10;
+      }
+      return sum;
+}
+
+int bitsManupulationExtendedNumbers::countDigitsLog(const int& number) {
+    int temp{number};
+    int output = int(log2(temp) + 1);
+    return output;
+}
+
+int bitsManupulationExtendedBits::countDigitsBits(const int& number) {
+    int temp{number};
+    int counter{};
+    while(temp != 0) {
+        temp >>= 1;
+        counter++;
+    }
+    return (counter);
+}
+int bitsManupulationExtendedBits::getBit(const int& number, const int& bit) {
+
+}
+
+void bitsManupulationExtendedBits::setBitValue(const int& number, const int& bit) {
+
+}
+
+void bitsManupulationExtendedBits::clearBitValue(const int& number, const int& bit) {
+
+}
+
+void bitsManupulationExtendedBits::toggleBitValue(const int& number, const int& bit) {
+
+}
+
+bool bitsManupulationExtendedBits::checkSetBit(const int& number, const int& bit) {
+
 }
