@@ -20,8 +20,15 @@ int main() {
     cout<<endl;
     recurrsiveObj->walkingTowardsDestination(1,10);
     cout<<endl;
-    std::string passingValue="Rituparna";
+    std::string passingValue="BookkooBzyx";
     recurrsiveObj->reverseString(passingValue,0,passingValue.length()-1);
     cout<<endl;
+    std::atomic<bool> isPalindrome{}; 
+    isPalindrome = recurrsiveObj->stringPalindrome(passingValue,0,passingValue.length()-1);
+    if (isPalindrome) {
+        cout << "Palindrome string \n";
+    } else {
+        cout << "Not a palindrome string \n";
+    }
     return (0);
 }

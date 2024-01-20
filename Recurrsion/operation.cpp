@@ -67,3 +67,17 @@ void playWithRecurrsion::reverseString(std::string& receivedString, const int& s
     reverseString(receivedString,tempStart,tempEnd);
     std::cout << receivedString << std::endl;
 }
+
+bool playWithRecurrsion::stringPalindrome(std::string& receivedString, const int& start, const int& end) {
+    //Base case
+    int tempStart{start}, tempEnd{end};
+    if (tempStart>tempEnd) {
+        return true;
+    }
+    //Processing
+    if (receivedString[tempStart] != receivedString[tempEnd]) {
+        return false;
+    }
+    //Tail recurrsive 
+    return stringPalindrome(receivedString,++tempStart,--tempEnd);
+}

@@ -5,6 +5,7 @@
 #include <thread>
 #include <exception>
 #include <cmath>
+#include <atomic>
 
 class recurrsiveAbastractInterface{
     public:
@@ -17,7 +18,8 @@ class recurrsiveAbastractInterface{
     virtual void printInDecreasongOrder(const int&) = 0;
     virtual void sayDigit(const int&, std::vector<std::string>&) = 0;
     virtual void walkingTowardsDestination(const int&, const int&) = 0;
-    virtual void reverseString(std::string&, const int&, const int&  ) = 0;
+    virtual void reverseString(std::string&, const int&, const int& ) = 0;
+    virtual bool stringPalindrome(std::string&, const int&, const int& ) = 0;
 };
 
 
@@ -30,4 +32,5 @@ class playWithRecurrsion: public recurrsiveAbastractInterface {
     void sayDigit(const int&, std::vector<std::string>&) final;
     void walkingTowardsDestination(const int&, const int&) final;
     void reverseString(std::string&, const int&, const int& ) final;
+    bool stringPalindrome(std::string&, const int&, const int& ) final;
 };
