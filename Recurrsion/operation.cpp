@@ -44,11 +44,13 @@ void playWithRecurrsion::sayDigit(const int& number, std::vector<std::string>& r
 
 void playWithRecurrsion::walkingTowardsDestination(const int& source, const int& destination) {
     int tempSouce{source}, tempDestination{destination};
-    std::cout << "Source " << tempSouce  << " Destination " << tempDestination << std::endl;
+    //Base case   
     if (tempDestination == tempSouce) {
         return;
     }
-
+    //Processing
+    std::cout << "Source " << tempSouce  << " Destination " << tempDestination << std::endl;
     tempSouce++;
+    //Tail recurrsion
     walkingTowardsDestination(tempSouce, tempDestination);
 }
