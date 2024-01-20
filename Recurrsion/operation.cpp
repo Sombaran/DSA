@@ -54,3 +54,16 @@ void playWithRecurrsion::walkingTowardsDestination(const int& source, const int&
     //Tail recurrsion
     walkingTowardsDestination(tempSouce, tempDestination);
 }
+
+void playWithRecurrsion::reverseString(std::string& receivedString, const int& start, const int& end) {
+    //Base case
+    int tempStart{start}, tempEnd{end};
+    if (tempStart>tempEnd) {
+        return;
+    }
+    //Processing
+    std::swap(receivedString[tempStart++],receivedString[tempEnd--]);
+    //Tail Recurssion
+    reverseString(receivedString,tempStart,tempEnd);
+    std::cout << receivedString << std::endl;
+}

@@ -20,5 +20,8 @@ int main() {
     cout<<endl;
     recurrsiveObj->walkingTowardsDestination(1,10);
     cout<<endl;
+    std::string passingValue="Rituparna";
+    recurrsiveObj->reverseString(passingValue,0,passingValue.length()-1);
+    cout<<endl;
     return (0);
 }
