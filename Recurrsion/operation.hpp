@@ -22,7 +22,7 @@ class recurrsiveAbastractInterface{
 class playWithRecurrsion: public recurrsiveAbastractInterface {
     public:
     playWithRecurrsion() = default;
-    void printInIncresingOrder(const int&);
-    void printInDecreasongOrder(const int&);
+    void printInIncresingOrder(const int&) final;
+    void printInDecreasongOrder(const int&) final;
     ~playWithRecurrsion()= default;
 };
