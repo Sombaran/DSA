@@ -78,6 +78,28 @@ bool playWithRecurrsion::stringPalindrome(std::string& receivedString, const int
     if (receivedString[tempStart] != receivedString[tempEnd]) {
         return false;
     }
-    //Tail recurrsive 
+    //Tail recurrsion
     return stringPalindrome(receivedString,++tempStart,--tempEnd);
+}
+
+int playWithRecurrsion::powerFunction(const int& number, const int& raisedToPower) {
+    //Base case
+    int tempNumber {number}, tempRaisedToPower{raisedToPower};
+    if (tempRaisedToPower == 0) {
+        return 1;
+    }
+    if (tempRaisedToPower == 1) {
+        return tempNumber;
+    }
+
+    //Head recurrsion
+    int answer =  powerFunction(tempNumber,(tempRaisedToPower/2));
+    
+    //Processing
+    if ((tempRaisedToPower&1)==0) {
+        return (answer * answer);
+    }
+    else {
+        return (tempNumber * answer * answer);
+    }
 }

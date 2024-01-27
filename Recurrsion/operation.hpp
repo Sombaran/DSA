@@ -20,6 +20,7 @@ class recurrsiveAbastractInterface{
     virtual void walkingTowardsDestination(const int&, const int&) = 0;
     virtual void reverseString(std::string&, const int&, const int& ) = 0;
     virtual bool stringPalindrome(std::string&, const int&, const int& ) = 0;
+    virtual int powerFunction(const int&, const int&) = 0;
 };
 
 
@@ -33,4 +34,5 @@ class playWithRecurrsion: public recurrsiveAbastractInterface {
     void walkingTowardsDestination(const int&, const int&) final;
     void reverseString(std::string&, const int&, const int& ) final;
     bool stringPalindrome(std::string&, const int&, const int& ) final;
+    int powerFunction(const int&, const int&) final;
 };

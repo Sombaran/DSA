@@ -30,5 +30,7 @@ int main() {
     } else {
         cout << "Not a palindrome string \n";
     }
+    double returnPowerFunctionOutput = recurrsiveObj->powerFunction(2,10);
+    cout <<  "Power output is " << returnPowerFunctionOutput << endl;
     return (0);
 }
