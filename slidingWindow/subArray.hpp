@@ -4,6 +4,7 @@
 #include <memory>
 #include <functional>
 #include <thread>
+#include <limits.h>
 
 class slidingWindow {
     public:
