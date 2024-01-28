@@ -7,12 +7,27 @@
 
 class slidingWindow {
     public:
-    explicit slidingWindow() = default;
+    slidingWindow() = default;
+    virtual ~slidingWindow() = default;
     slidingWindow (const slidingWindow&) =  delete;
     slidingWindow& operator= (const slidingWindow&) = delete;
     slidingWindow& operator= (const slidingWindow&&) = delete;
-    ~slidingWindow() = default;
-    int max_sum_subarray(std::vector<int>& received, const int& k);
-    int longest_sum_subarray(std::vector<int>& received, const int& k);
-    int max_sum_subarray(std::vector<int>& received);
+    virtual int longest_sum_subarray(std::vector<int>& , const int& ) = 0;
+    //virtual int max_sum_subarray(std::vector<int>& , const int& )=0;
+    //virtual int max_sum_subarray(std::vector<int>& )=0;
 };
+
+class variableWindow: public slidingWindow {
+    public:
+    variableWindow() = default;
+    ~variableWindow() = default;
+    int longest_sum_subarray(std::vector<int>& , const int& ) final;
+};
+
+/*class fixedWindowSize: public slidingWindow {
+    public:
+    fixedWindowSize () = default;
+    ~ fixedWindowSize() = default;
+    //int max_sum_subarray(std::vector<int>& , const int& ) final;
+    //int max_sum_subarray(std::vector<int>& ) final;
+};*/
